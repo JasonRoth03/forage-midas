@@ -1,6 +1,9 @@
 general:
   kafka-topic: My-topic
 
+server:
+  port: 33400
+
 spring:
   kafka:
     producer:
