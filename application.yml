@@ -1,0 +1,16 @@
+general:
+  kafka-topic: My-topic
+
+spring:
+  kafka:
+    producer:
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+    consumer:
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      auto-offset-reset: earliest
+      properties:
+        spring:
+          json:
+            # This is required for the JsonDeserializer to create your Transaction object
+            trusted:
+              packages: "com.jpmc.midascore.foundation"
